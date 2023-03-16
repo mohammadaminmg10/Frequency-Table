@@ -17,7 +17,6 @@ func main() {
 	}
 	numberOfData := len(data)
 	sort.Float64s(data)
-	//var freqMap map[float64]float64
 	freqMap := make(map[float64]float64)
 	for _, v := range data {
 		freqMap[v]++
