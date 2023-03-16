@@ -17,7 +17,22 @@ func main() {
 	}
 	numberOfData := len(data)
 	sort.Float64s(data)
+	//var freqMap map[float64]float64
+	freqMap := make(map[float64]float64)
+	for _, v := range data {
+		freqMap[v]++
+	}
+	var mostRepeated float64
+	maxFreq := 0.0
+	for num, freq := range freqMap {
+		if freq > maxFreq {
+			mostRepeated = num
+			maxFreq = freq
+		}
+	}
 
+	fmt.Println("the mode of our data set is")
+	fmt.Println(mostRepeated)
 	minVal := data[0]
 	maxVal := data[numberOfData-1]
 
